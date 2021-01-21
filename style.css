@@ -1,10 +1,11 @@
 body {
   background-color: rgb(253 , 251 , 251);
-}
-
-#titulo {
+  margin: 0;
+  padding: 0;
+  text-align: justify;
   font-family: 'Press Start 2P', cursive;
-  color: rgb(36 , 36 , 35);
+  color: rgb(36 , 36 , 35); /* onde achei a cor http://pt.tacolor.com/hex/5b5b58/ */
+
 }
 
 #home {
@@ -13,31 +14,25 @@ body {
   width: 100%;
   height: 5rem;
   padding: 1rem;
-  text-align: justify;
-  background-color: seagreen;
-  font-family: 'Press Start 2P', cursive;
-  color: rgb(36 , 36 , 35);
+  background-color:  rgb(34, 148, 83);
+
 }
 
 #cabecalho {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   padding: 1rem;
-  text-align: justify;
   background-color: seagreen;
-  font-family: 'Press Start 2P', cursive;
-  color: rgb(36 , 36 , 35);
 }
 
 .atalhos {
   position: relative;
   display: inline;
   padding: 15px;
-  font-family: 'Press Start 2P', cursive;
-  color: rgb(36 , 36 , 35);
   border-radius: 2rem;
+  color: rgb(36 , 36 , 35);
 }
 
 .atalhos:hover {
@@ -56,8 +51,6 @@ body {
   margin: 1rem;
   padding-top: 2.4rem;
   padding-bottom: 3.2rem;
-  font-family: 'Press Start 2P', cursive;
-  color: rgb(36 , 36 , 35);
   font-size: 0.75rem;
   line-height: 1.5rem;
 }
@@ -71,6 +64,18 @@ body {
   flex-direction: row;
 }
 
+#firstSpace {
+  display: grid;
+  grid-template-columns: repeat(2 , 1fr);
+  box-sizing: border-box;
+}
+
+#mainArticle p {
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+  margin: 3.2rem 1.5rem 1.2rem;
+}
+
 #artigos {
   display: grid;
   grid-template-columns: repeat(2 , 1fr);
@@ -80,8 +85,6 @@ body {
 
 #artigos article , #artigos aside {
   margin: 1.2rem;
-  font-family: 'Press Start 2P', cursive;
-  color: rgb(36 , 36 , 35); /* onde achei a cor http://pt.tacolor.com/hex/5b5b58/ */
   font-size: 0.75rem;
   line-height: 1.5rem;
 }
@@ -98,4 +101,65 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.photoTop {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#barraDeAtalhos {
+  display: none;
+}
+
+@media screen and (max-width: 780px) {
+  #artigos {
+    display: inline-block;
+  }
+
+  #artigos article , #artigos aside {
+    flex-direction: column;
+  }
+
+  #barra_atalhos {
+    display: none;
+  }
+
+  #barraDeAtalhos{
+    display: block;
+    margin-top: 1.5rem;
+    border-radius: 5px;
+    background-color: rgb(34, 148, 83);
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+  }
+
+  #cabecalho {
+    font-size: 0.75rem;
+    text-align: center;
+    width: 100vw;
+  }
+
+  .githubIcon {
+    display: block;
+    margin-bottom: 4.5rem;
+    margin-top: 1.5rem;
+  }
+
+  #firstSpace {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #mainArticle p {
+    margin: 3.2rem 2.5rem 1.2rem;
+  }
+
+  #lista_licoes {
+    justify-content: center;
+  }
 }
